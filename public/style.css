@@ -46,3 +46,54 @@ section#cards div.card p.descricao {
     margin-bottom: 1rem;
 }
  
+section#cadastro{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5rem;
+}
+
+section#cadastro form{
+    width: 50%;
+}
+
+section#cadastro h2{
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+section#cadastro form input{
+    width: 100%;
+    padding: .6rem;
+    font-size: 1rem;
+    outline: none;
+    border: solid 2px rgb(197, 197, 197);
+    margin: 0rem 1rem 1rem 1rem;
+}
+
+section#cadastro form label {
+    margin: 1rem;
+    color:rgb(148, 148, 148); 
+}
+
+section#cadastro button{
+    padding: .6rem;
+    display: flex;
+    width: 8rem;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px red;
+    color: red;
+    cursor: pointer;
+}
+
+section#cadastro button:hover{
+    background-color: red;
+    color: #fff;
+}
+
+
+
