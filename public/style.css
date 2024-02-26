@@ -88,6 +88,7 @@ section#cadastro button{
     border: solid 1px red;
     color: red;
     cursor: pointer;
+    transition: all .3s ease-in-out;
 }
 
 section#cadastro button:hover{

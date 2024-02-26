@@ -35,7 +35,7 @@ app.get('/',(req,res) => {
 })
 
 app.post('/add',(req,res) => {
-    
+    res.send("Olá addd")
 })
 
 app.listen(3000, () => {console.log("Servidor rodando na porta http:/localhost:3000")});
