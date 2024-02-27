@@ -4,6 +4,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")))
+app.use(express.urlencoded())
 
 const pokedex = [
     {
@@ -26,6 +27,13 @@ const pokedex = [
         descricao:"Após o nascimento, suas costas incha e endurece formando uma concha. Ele espalha uma espuma potente pela boca.",
         tipo: "Water",
         imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
+    },
+    {
+        id: 4,
+        nome: "Pikachu",
+        descricao:" Quando está irritado, descarrega imediatamente a energia armazenada nas bolsas em suas bochechas.",
+        tipo: "Eletric",
+        imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
     }
 ]
 
@@ -35,7 +43,12 @@ app.get('/',(req,res) => {
 })
 
 app.post('/add',(req,res) => {
-    res.send("Olá addd")
+    const pokemon  = req.body
+
+    pokedex.push(pokemon)
+
+    res.redirect("/")
+
 })
 
 app.listen(3000, () => {console.log("Servidor rodando na porta http:/localhost:3000")});

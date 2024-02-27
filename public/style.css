@@ -25,13 +25,15 @@ main{
 section#cards{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 section#cards div.card{
-    width: 15rem;
+    width: 13rem;
     box-shadow: 5px 5px 5px 5px #00000015;
     padding: 0 1rem;
+    margin-top: 3rem;
 }
 
 section#cards div.card img{
