@@ -44,11 +44,13 @@ app.get('/',(req,res) => {
 
 app.post('/add',(req,res) => {
     const pokemon  = req.body
-
+    pokemon.id = pokedex.length + 1
     pokedex.push(pokemon)
-
     res.redirect("/")
+})
 
+app.put("/upedate/:id", (req,res) => {
+    res.
 })
 
 app.listen(3000, () => {console.log("Servidor rodando na porta http:/localhost:3000")});
