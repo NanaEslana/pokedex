@@ -32,31 +32,61 @@ section#cards{
 section#cards div.card{
     width: 13rem;
     box-shadow: 5px 5px 5px 5px #00000015;
-    padding: 0 1rem;
-    margin-top: 3rem;
+    padding: 1rem 1rem;
+    margin: 3rem 0 5rem 0;
+}
+
+section#cards h2 {
+    width: 100%;
+    text-align: center;
 }
 
 section#cards div.card img{
     width: 100%;
 }
 
-section#cards div.card h2 {
+section#cards div.card h3 {
     margin-bottom: 1rem;
 }
  
 section#cards div.card p.descricao {
     margin-bottom: 1rem;
 }
+
+section#cards div.card a {
+    padding: .5rem;
+    display: flex;
+    width: 4rem;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px #0077ff;
+    color: #0077ff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+section#cards div.card a:hover {
+    background-color: #0077ff;
+    color: #fff;
+}
  
 section#cadastro{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     padding: 5rem;
 }
 
-section#cadastro form{
+section#cadastro img {
     width: 50%;
+    height: 50%;
+    
+}
+
+section#cadastro form{
+    width: 100%;
 }
 
 section#cadastro h2{

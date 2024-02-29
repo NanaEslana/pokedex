@@ -38,8 +38,11 @@ const pokedex = [
 ]
 
 
+let pokemon = undefined;
+
 app.get('/',(req,res) => {
-    res.render("index", {pokedex});
+    
+    res.render("index", {pokedex,pokemon });
 })
 
 app.post('/create',(req,res) => {
@@ -49,11 +52,19 @@ app.post('/create',(req,res) => {
     res.redirect("/");
 })
 
-app.get("/update/:id", (req,res) => {
+app.get("/detalhes/:id", (req,res) => {
     const id = +req.params.id
+    pokemon = pokedex.find(pokemon => pokemon.id === id);
+    res.redirect("/");
+})
 
-    const pokemon = pokedex.find(pokemon => pokemon.id === id);
-    res.send(pokemon);
+app.post("/update/:id", (req,res) => {
+    const id = +req.params.id - 1;
+    const newPokemon = req.body;
+    newPokemon.id =  id + 1 ;
+    pokedex[id]= newPokemon;
+    pokemon = undefined;
+    res.redirect("/");
 })
 
 app.listen(3000, () => {console.log("Servidor rodando na porta http:/localhost:3000")});
