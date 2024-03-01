@@ -4,19 +4,48 @@
     margin: 0;
     padding: 0;
     font-family: Roboto, Arial;
+    scroll-behavior: smooth;
     
 }
 
-header {
-    padding: 2rem;
-    background-color: red;
+nav {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    background-color: #DC0A2D;
 }
 
-header h1 {
-    color: #fff;
-    font-size: 3rem;
-    text-align: center;
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
 }
+
+nav ul li {
+    padding: 0.6rem;
+}
+
+nav img {
+    width: 3rem;
+}
+
+nav h1 {
+    color: #fff;
+    font-size: 1.4rem;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+header img {
+    margin-top: 4.5rem;
+    width: 100%;
+}
+ 
 
 main{
     margin: 0 10rem 0 10rem;
@@ -53,10 +82,9 @@ section#cards div.card p.descricao {
     margin-bottom: 1rem;
 }
 
-section#cards div.card a {
+section#cards div.card a#editar {
     padding: .5rem;
     display: flex;
-    width: 4rem;
     justify-content: center;
     margin: 0 auto;
     font-size: 1rem;
@@ -68,8 +96,27 @@ section#cards div.card a {
     text-decoration: none;
     margin-top: 1rem;
 }
-section#cards div.card a:hover {
+section#cards div.card a#editar:hover {
     background-color: #0077ff;
+    color: #fff;
+}
+
+section#cards div.card a#apagar {
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px #DC0A2D;
+    color: #DC0A2D;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+section#cards div.card a#apagar:hover {
+    background-color: #DC0A2D;
     color: #fff;
 }
  
@@ -117,16 +164,34 @@ section#cadastro button{
     margin: 0 auto;
     font-size: 1rem;
     background-color: #fff;
-    border: solid 1px red;
-    color: red;
+    border: solid 1px #DC0A2D;
+    color: #DC0A2D;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
 
 section#cadastro button:hover{
-    background-color: red;
+    background-color: #DC0A2D;
     color: #fff;
 }
 
+footer {
+    background-color:#DC0A2D ;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+footer p {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+}
 
+footer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}

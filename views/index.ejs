@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/601px-Pokebola-pokeball-png-0.png">
-    <title>Pokedex</title>
+    <title>Pokédex</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/601px-Pokebola-pokeball-png-0.png" alt="Pokebola"></li>
+            <li><a href="/"><h1>Pokédex</h1></a></li>
+            <li><a href="#cadastro">Cadastro</a></li>
+            <li><a href="#cards">Pokemons</a></li>
+
+        </ul>
+        
+    </nav>
+
     <header>
-        <h1>Pokedex</h1>
+        <img src="https://cdn.unifiedcommerce.com/content/product/large/079346093755.jpg" alt="Banner">
     </header>
     
     <main>
@@ -75,11 +86,17 @@
                     <h3> <%= pokemon.nome %> </h3>
                     <p class="descricao"> <%= pokemon.descricao %> </p>
                     <p>Tipo: <%= pokemon.tipo %> </p> 
-                    <a href="/detalhes/<%= pokemon.id %>"> Editar</a>
+                    <a id="editar" href="/detalhes/<%= pokemon.id %>"> Editar</a>
+                    <a id="apagar"href="/delete/<%= pokemon.id %>"> Excluir</a>
+                    
                 
                 </div>
             <% }) %>
         </section> 
     </main>
+    <footer>
+        <p>Todos os direitos para Thi Code &copy;</p>
+        <p>Dados retirados de <a target="_blank" href="https://www.pokemon.com/br/pokedex">Pokedex</a></p>
+    </footer>
 </body>
 </html>
