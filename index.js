@@ -41,7 +41,6 @@ const pokedex = [
 let pokemon = undefined;
 
 app.get('/',(req,res) => {
-    
     res.render("index", {pokedex,pokemon });
 })
 
@@ -66,5 +65,11 @@ app.post("/update/:id", (req,res) => {
     pokemon = undefined;
     res.redirect("/#cards");
 })
+
+/*app.get("/delete/:id"), (req,res) => {
+    const id = +req.params.id - 1;
+    delete pokedex[id];
+    res.redirect("/#cards");
+}*/
 
 app.listen(3000, () => {console.log("Servidor rodando na porta http:/localhost:3000")});
