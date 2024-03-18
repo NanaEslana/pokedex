@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/601px-Pokebola-pokeball-png-0.png">
     <title>Pokédex</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <nav>
@@ -32,7 +33,7 @@
                 <% if(pokemon == undefined) { %>
                     <h2>Cadastre um novo POKEMON!</h2>
         
-                    <form action="/create" method="post">
+                    <form>
         
                        <label for="nome">Nome:</label>
                        <input type="text" id="nome" name="nome">
@@ -46,15 +47,16 @@
                        <label for="imagem">Link da imagem:</label>
                        <input type="text" id="imagem" name="imagem">
         
-                       <button id="btnCadastrar" type="submit"> Cadastrar </button>
+                       <button id="btnCadastrar" type="button"> Cadastrar </button>
         
                     </forma>
                     <% } else { %>
         
                         <h2>Atualize seu POKEMON!</h2>
                     
-                    <form action="/update/<%= pokemon.id %>" method="post">
+                    <form id="form">
         
+                        <input type="hidden" id="id" name="id" value="<%= pokemon.id %>">
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" name="nome" value="<%= pokemon.nome %>">
          
@@ -67,7 +69,7 @@
                         <label for="imagem">Link da imagem:</label>
                         <input type="text" id="imagem" name="imagem" value="<%= pokemon.imagem %>">
          
-                        <button id="btnAtualizar" type="submit"> Atualizar </button>
+                        <button id="btnAtualizar" type="button"> Atualizar </button>
          
                      </forma>
                      <% } %>
@@ -79,17 +81,9 @@
 
         <section id="cards">
             <h2>Lista de POKEMONS</h2>
-            <% pokedex.forEach((pokemon) => { %>
-                <div class="card">
+            <div id="pokemons">
 
-                    <img src="<%= pokemon.imagem %>" alt="">
-                    <h3> <%= pokemon.nome %> </h3>
-                    <p class="descricao"> <%= pokemon.descricao %> </p>
-                    <p>Tipo: <%= pokemon.tipo %> </p> 
-                    <a id="editar" href="/detalhes/<%= pokemon.id %>"> Editar</a>
-                    <a id="apagar"href="/delete/<%= pokemon.id %>"> Excluir</a>
-                </div>
-            <% }) %>
+            </div>
         </section> 
     </main>
     <footer>
@@ -97,4 +91,5 @@
         <p>Dados retirados de <a target="_blank" href="https://www.pokemon.com/br/pokedex">Pokedex</a></p>
     </footer>
 </body>
+<script src="script.js"></script>
 </html>

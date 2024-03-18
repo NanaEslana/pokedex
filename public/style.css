@@ -51,7 +51,7 @@ main{
     margin: 0 10rem 0 10rem;
 }
 
-section#cards{
+section#cards #pokemons {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
